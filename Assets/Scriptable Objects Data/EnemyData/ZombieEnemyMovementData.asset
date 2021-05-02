@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b241477baf02084439b5a3804303e212, type: 3}
   m_Name: ZombieEnemyMovementData
   m_EditorClassIdentifier: 
-  maxSpeed: 3
-  accelaration: 30
+  maxSpeed: 2
+  accelaration: 20
   deaccelaration: 50

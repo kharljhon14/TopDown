@@ -24,10 +24,10 @@ namespace TopDownShooter
         public void RenderBehindHead(bool value)
         {
             if (value)
-                sr.sortingOrder = playerSortingOrder - 2;
+                sr.sortingOrder = playerSortingOrder - 1;
 
             else
-                sr.sortingOrder = playerSortingOrder + 2;
+                sr.sortingOrder = playerSortingOrder + 1;
         }
     }
 }

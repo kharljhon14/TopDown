@@ -29,7 +29,7 @@ namespace TopDownShooter
             rb2d.velocity = currentVelocity * movementDirection.normalized;
         }
 
-        public void MovePlayer(Vector2 movementInput)
+        public void MoveAgent(Vector2 movementInput)
         {
             if(movementInput.magnitude > 0)
             {

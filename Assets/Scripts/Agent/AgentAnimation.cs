@@ -19,7 +19,7 @@ namespace TopDownShooter
             anim.SetBool("Moving", value);
         }
 
-        public void AnimatePlayer(float velocity)
+        public void AnimateAgent(float velocity)
         {
             SetMovingAnimation(velocity > 0);
         }

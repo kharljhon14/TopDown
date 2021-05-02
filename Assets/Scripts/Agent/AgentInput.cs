@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace TopDownShooter
 {
-    public class PlayerInputs : MonoBehaviour
+    public class AgentInput : MonoBehaviour, IAgentInput
     {
         private Camera mainCamera;
         private bool fireButtonDown = false;
@@ -30,13 +30,13 @@ namespace TopDownShooter
 
         private void GetFireInput()
         {
-            if(Input.GetAxisRaw("Fire1") > 0)
+            if (Input.GetAxisRaw("Fire1") > 0)
             {
                 if (!fireButtonDown)
                 {
                     fireButtonDown = true;
                     OnFireButtonPressed?.Invoke();
-                } 
+                }
             }
 
             else
