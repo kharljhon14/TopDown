@@ -65,7 +65,27 @@ PrefabInstance:
       objectReference: {fileID: 22100000, guid: 0b14d25dbeed8fc48a0c2e53c147f6d6, type: 2}
     - target: {fileID: 9223155145810379726, guid: 98207e0a9ad6e0548b97e44b4e45144f, type: 3}
       propertyPath: m_Name
-      value: EnemyImpactEffect
+      value: EnemyImpactEffect Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223155145810379727, guid: 98207e0a9ad6e0548b97e44b4e45144f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.08235294
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223155145810379727, guid: 98207e0a9ad6e0548b97e44b4e45144f, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223155145810379727, guid: 98207e0a9ad6e0548b97e44b4e45144f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.95294124
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223155145810379727, guid: 98207e0a9ad6e0548b97e44b4e45144f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223155145810379727, guid: 98207e0a9ad6e0548b97e44b4e45144f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -787291001
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 83108929, guid: 98207e0a9ad6e0548b97e44b4e45144f, type: 3}
