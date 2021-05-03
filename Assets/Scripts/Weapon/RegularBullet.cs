@@ -36,25 +36,31 @@ namespace TopDownShooter
 
             if(collision.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
             {
-                HitObstacle();
+                HitObstacle(collision);
             }
 
             else if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
             {
-                HitEnemy();
+                HitEnemy(collision);
             }
 
             Destroy(gameObject);
         }
 
-        private void HitObstacle()
+        private void HitObstacle(Collider2D collision)
         {
             Debug.Log("Hitting Obstacle");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right);
+
+            if (hit.collider != null)
+                Instantiate(bulletData.ImpactObstacleImpact, hit.point, Quaternion.identity);
         }
 
-        private void HitEnemy()
+        private void HitEnemy(Collider2D collision)
         {
             Debug.Log("Hitting Enemy");
+            Vector2 randomOffset = Random.insideUnitCircle * .5f;
+            Instantiate(bulletData.ImpactEnemyPrefab, collision.transform.position + (Vector3)randomOffset, Quaternion.identity);
         }
     }
 }
