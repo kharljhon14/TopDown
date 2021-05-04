@@ -1,7 +1,9 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TopDownShooter
 {
@@ -22,6 +24,12 @@ namespace TopDownShooter
         private void SetCursorIcon()
         {
             Cursor.SetCursor(cursorTexture, new Vector2(cursorTexture.width / 2f, cursorTexture.height / 2f), CursorMode.Auto);
+        }
+        
+        public void RestartLevel()
+        {
+            DOTween.KillAll();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

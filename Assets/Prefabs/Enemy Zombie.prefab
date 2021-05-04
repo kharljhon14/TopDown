@@ -60,9 +60,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb6ffd2001cdd949a5a5daff4c26dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freezeTimeDelay: 0.01
+  freezeTimeDelay: 0.001
   unFreezeTimeDelay: 0.02
-  timeFreezeValue: 0.2
+  timeFreezeValue: 0.1
 --- !u!114 &551264245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,6 +77,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackToPlay:
   - {fileID: 551264244}
+  - {fileID: 7532144900533460061}
 --- !u!1 &741823499
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d04bbed0283ca04c903634b3f6e4852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <AttackDelay>k__BackingField: 1
+  <AttackDelay>k__BackingField: 2
 --- !u!50 &2484618868242812912
 Rigidbody2D:
   serializedVersion: 4
@@ -1356,7 +1357,7 @@ MonoBehaviour:
   - {x: -0.35342848, y: 0.3718363, z: 0}
   m_ShapePathHash: -842482617
   m_Mesh: {fileID: 0}
-  m_InstanceId: 108708
+  m_InstanceId: 183094
 --- !u!1 &2484618868563212095
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ namespace TopDownShooter
 
         protected void OnDrawGizmos()
         {
-            if(UnityEditor.Selection.activeObject == gameObject)
+            if (UnityEditor.Selection.activeObject == gameObject)
             {
                 Gizmos.color = Color.yellow;
 

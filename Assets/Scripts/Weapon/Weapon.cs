@@ -20,6 +20,7 @@ namespace TopDownShooter
             set 
             {
                 ammo = Mathf.Clamp(value, 0, weaponSO.AmmoCapacity);
+                OnAmmoChange?.Invoke(ammo);
             }
         }
 
@@ -29,6 +30,7 @@ namespace TopDownShooter
 
         [field: SerializeField] public UnityEvent OnShoot { get; set; }
         [field: SerializeField] public UnityEvent OnShootNoAmmo { get; set; }
+        [field: SerializeField] public UnityEvent<int> OnAmmoChange { get; set; }
 
         private void Start()
         {
