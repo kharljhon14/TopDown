@@ -16,6 +16,7 @@ namespace TopDownShooter
 
         protected Rigidbody2D rb2d;
         protected Vector2 movementDirection;
+        protected bool isKnockedBack = false;
         
 
         private void Awake()
@@ -26,7 +27,9 @@ namespace TopDownShooter
         private void FixedUpdate()
         {
             OnVelocityChanged?.Invoke(currentVelocity);
-            rb2d.velocity = currentVelocity * movementDirection.normalized;
+
+            if(!isKnockedBack)
+                rb2d.velocity = currentVelocity * movementDirection.normalized;
         }
 
         public void MoveAgent(Vector2 movementInput)
@@ -57,6 +60,36 @@ namespace TopDownShooter
 
         public void StopImmedietly()
         {
+            currentVelocity = 0;
+            rb2d.velocity = Vector2.zero;
+        }
+
+        public void KnockBack(Vector2 direction, float power, float duration)
+        {
+            if (!isKnockedBack)
+            {
+                isKnockedBack = true;
+                StartCoroutine(KnockBackCoroutine(direction, power, duration));
+            }
+        }
+
+        public void ResetKnockBack()
+        {
+            StopAllCoroutines();
+            StopCoroutine("KnockBackCoroutine");
+            ResetKnockBackValues();
+        }
+
+        private IEnumerator KnockBackCoroutine(Vector2 direction, float power, float duration)
+        {
+            rb2d.AddForce(direction.normalized * power, ForceMode2D.Impulse);
+            yield return new WaitForSeconds(duration);
+            ResetKnockBackValues();
+        }
+
+        private void ResetKnockBackValues()
+        {
+            isKnockedBack = false;
             currentVelocity = 0;
             rb2d.velocity = Vector2.zero;
         }

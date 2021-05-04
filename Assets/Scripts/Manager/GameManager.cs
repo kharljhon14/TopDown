@@ -9,6 +9,11 @@ namespace TopDownShooter
     {
         [SerializeField] private Texture2D cursorTexture = null;
 
+        private void Awake()
+        {
+            Application.targetFrameRate = -1;
+        }
+
         private void Start()
         {
             SetCursorIcon();

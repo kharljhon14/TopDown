@@ -64,6 +64,10 @@ namespace TopDownShooter
         private void HitEnemy(Collider2D collision)
         {
             Debug.Log("Hitting Enemy");
+
+            IKnockBack knockBack = collision.GetComponent<IKnockBack>();
+            knockBack?.KnockBack(transform.right, bulletData.KnockBackPower, bulletData.KnockBackDelay);
+
             Vector2 randomOffset = Random.insideUnitCircle * .5f;
             Instantiate(bulletData.ImpactEnemyPrefab, collision.transform.position + (Vector3)randomOffset, Quaternion.identity);
         }
