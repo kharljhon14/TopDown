@@ -36,14 +36,12 @@ namespace TopDownShooter
                 {
                     dead = true;
                     OnDeath?.Invoke();
-                    StartCoroutine(WaitToDie());
                 }
             }
         }
 
-        private IEnumerator WaitToDie()
+        public void Die()
         {
-            yield return new WaitForSeconds(.3f);
             Destroy(gameObject);
         }
 

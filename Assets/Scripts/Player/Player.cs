@@ -24,15 +24,9 @@ namespace TopDownShooter
                 {
                     dead = true;
                     OnDeath?.Invoke();
-                    StartCoroutine(DeathCoroutine());
                 }
             }
         }
-        
-        private IEnumerator DeathCoroutine()
-        {
-            yield return new WaitForSeconds(.5f);
-            Destroy(gameObject);
-        }
+
     }
 }

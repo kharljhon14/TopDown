@@ -23,5 +23,10 @@ namespace TopDownShooter
         {
             SetMovingAnimation(velocity > 0);
         }
+
+        public void PlayDeathAnimation()
+        {
+            anim.SetTrigger("Death");
+        }
     }
 }

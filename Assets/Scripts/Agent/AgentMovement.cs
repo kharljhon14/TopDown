@@ -54,5 +54,11 @@ namespace TopDownShooter
 
             return Mathf.Clamp(currentVelocity, 0, movementData.maxSpeed);
         }
+
+        public void StopImmedietly()
+        {
+            currentVelocity = 0;
+            rb2d.velocity = Vector2.zero;
+        }
     }
 }

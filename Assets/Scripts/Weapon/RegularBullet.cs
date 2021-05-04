@@ -7,7 +7,7 @@ namespace TopDownShooter
     public class RegularBullet : Bullet
     {
         protected Rigidbody2D rb2d;
-
+        private bool isDead = false;
         public override BulletSO BulletData 
         {   
             get => base.BulletData;
@@ -31,6 +31,11 @@ namespace TopDownShooter
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (isDead)
+                return;
+
+            isDead = true;
+
             IHitable hitable = collision.GetComponent<IHitable>();
             hitable?.GetHit(bulletData.Damage, gameObject);
 
