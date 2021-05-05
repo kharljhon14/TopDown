@@ -24,6 +24,12 @@ namespace TopDownShooter
         [field: SerializeField] public UIHealth UIHealth { get; set; }
 
         private bool dead = false;
+        private PlayerWeapon playerWeapon;
+
+        private void Awake()
+        {
+            playerWeapon = GetComponentInChildren<PlayerWeapon>();
+        }
 
         private void Start()
         {
@@ -42,6 +48,39 @@ namespace TopDownShooter
                 {
                     dead = true;
                     OnDeath?.Invoke();
+                }
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if(collision.gameObject.layer == LayerMask.NameToLayer("Items"))
+            {
+                Resouce resource = collision.gameObject.GetComponent<Resouce>();
+
+                if(resource != null)
+                {
+                    switch (resource.resouceType.ResouceEnum)
+                    {
+                        case ResouceType.Health:
+                            if (Health >= maxHealth)
+                                return;
+
+                            Health += resource.resouceType.GetAmount();
+                            resource.PickupResouce();
+                            break;
+
+                        case ResouceType.Ammo:
+                            if (playerWeapon.AmmoFull)
+                                return;
+
+                            playerWeapon.AddAmmo(resource.resouceType.GetAmount());
+                            resource.PickupResouce();
+                            break;
+
+                        default:
+                            break;
+                    }
                 }
             }
         }
