@@ -6,7 +6,7 @@ namespace TopDownShooter
 {
     public class EnemySpawner : MonoBehaviour
     {
-        [SerializeField] private GameObject enemyPrefab;
+        [SerializeField] private GameObject[] enemyPrefab;
         [SerializeField] private List<GameObject> spawnPoints;
         [SerializeField] private int enemyCount = 20;
         [SerializeField] private float minTimeDelay = .8f;
@@ -46,7 +46,8 @@ namespace TopDownShooter
 
         private void SpawnEnemy(Vector3 spawnPoint)
         {
-            Instantiate(enemyPrefab, spawnPoint, Quaternion.identity);
+            int randomIndex = Random.Range(0, enemyPrefab.Length);
+            Instantiate(enemyPrefab[randomIndex], spawnPoint, Quaternion.identity);
         }
     }
 }
