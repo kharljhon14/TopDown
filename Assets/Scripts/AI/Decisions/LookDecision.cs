@@ -27,16 +27,16 @@ namespace TopDownShooter
             return false;
         }
 
-        private void OnDrawGizmos()
-        {
-            if(UnityEditor.Selection.activeObject == gameObject && enemyBrain != null && enemyBrain.Target != null)
-            {
-                Gizmos.color = Color.red;
-                Vector3 direction = enemyBrain.Target.transform.position - transform.position;
-                Gizmos.DrawRay(transform.position, direction.normalized * distance);
+        //private void OnDrawGizmos()
+        //{
+        //    if(UnityEditor.Selection.activeObject == gameObject && enemyBrain != null && enemyBrain.Target != null)
+        //    {
+        //        Gizmos.color = Color.red;
+        //        Vector3 direction = enemyBrain.Target.transform.position - transform.position;
+        //        Gizmos.DrawRay(transform.position, direction.normalized * distance);
 
-                Gizmos.color = Color.white;
-            }
-        }
+        //        Gizmos.color = Color.white;
+        //    }
+        //}
     }
 }

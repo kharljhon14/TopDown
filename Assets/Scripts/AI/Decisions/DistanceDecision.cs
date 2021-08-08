@@ -22,16 +22,16 @@ namespace TopDownShooter
             return aiActionData.TargetSpotted;
         }
 
-        protected void OnDrawGizmos()
-        {
-            if (UnityEditor.Selection.activeObject == gameObject)
-            {
-                Gizmos.color = Color.yellow;
+        //protected void OnDrawGizmos()
+        //{
+        //    if (UnityEditor.Selection.activeObject == gameObject)
+        //    {
+        //        Gizmos.color = Color.yellow;
 
-                Gizmos.DrawWireSphere(transform.position, Distance);
+        //        Gizmos.DrawWireSphere(transform.position, Distance);
 
-                Gizmos.color = Color.white;
-            }
-        }
+        //        Gizmos.color = Color.white;
+        //    }
+        //}
     }
 }
